@@ -9,6 +9,7 @@
     "dev": "vite",
     "test": "vitest --run --globals --config vitest.config.ts",
     "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
     "ci:publish": "pnpm publish --no-git-checks",
     "ci:bump-version": "pnpm version minor",
     "ci:patch-version": "pnpm version patch",
