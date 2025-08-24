@@ -1,6 +1,6 @@
 {
   "name": "vue-plugin-browser-extension-storage",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -22,9 +22,14 @@
   },
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.umd.cjs"
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "default": "./dist/index.umd.cjs",
+        "types": "./dist/index.d.ts"
+      }
     }
   },
   "author": "",
