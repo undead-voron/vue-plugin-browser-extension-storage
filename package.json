@@ -16,6 +16,10 @@
     "ci:bump-version-major": "pnpm version major"
   },
   "keywords": [],
+  "repository": {
+    "url": "https://github.com/undead-voron/vue-plugin-browser-extension-storage",
+    "type": "git"
+  },
   "author": "",
   "license": "ISC",
   "packageManager": "pnpm@10.12.4",
