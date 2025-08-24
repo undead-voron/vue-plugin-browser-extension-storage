@@ -1,5 +1,4 @@
 import type { Plugin } from 'vue'
-import { computed, unref, UnwrapNestedRefs, UnwrapRef } from 'vue'
 import browser from 'webextension-polyfill'
 import { injectionKey } from './constants'
 import useStorageProxy from './useStorageProxy'
