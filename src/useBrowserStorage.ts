@@ -13,7 +13,7 @@ export function useBrowserStorage<T>(key: string): ComputedRef<T> {
   const state = inject(injectionKey)!
 
   return computed({
-    // @ts-expect-error
+    // @ts-expect-error fix any typying
     get: () => state.value[key as keyof typeof state] as T,
     set: (newValue: T) => {
       browser.storage.local.set({ key: newValue })
