@@ -14,13 +14,8 @@ export async function createPlugin(): Promise<Plugin> {
     throw new Error('local storage is not set')
   }
   const initialState = await browser.storage[areaName].get(initialStateKeys)
-
-  const check = useStorageProxy(initialState, areaName)
-
-  // eslint-ignore
-  console.warn('check it ', check)
+  const { state: proxy } = useStorageProxy(initialState, areaName)
   return (app) => {
-    const { state: proxy } = useStorageProxy(initialState, areaName)
     app.provide(injectionKey, proxy)
   }
 }
