@@ -5,7 +5,7 @@ import useStorageProxy from './useStorageProxy'
 
 export { useBrowserStorage } from './useBrowserStorage'
 
-export async function createPlugin(): Promise<Plugin> {
+export async function createPlugin(): Promise<Plugin<void>> {
   const areaName: 'local' | 'sync' | 'managed' | 'session' = 'local'
   // @ts-expect-error fix getKeys error
   const initialStateKeys: string[] = await browser.storage[areaName].getKeys()
