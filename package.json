@@ -1,6 +1,6 @@
 {
   "name": "vue-plugin-browser-extension-storage",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "package-name": "vue-plugin-browser-extension-storage",
   "types": "dist/index.d.ts",
   "description": "",

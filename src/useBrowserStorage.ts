@@ -1,4 +1,4 @@
-import { computed, ComputedRef, inject } from 'vue'
+import { computed, inject, Ref, WritableComputedRef } from 'vue'
 import browser from 'webextension-polyfill'
 import { injectionKey } from './constants'
 
@@ -9,8 +9,8 @@ import { injectionKey } from './constants'
  * Provides a reactive wrapper upon coupon engine properties and methods
  * Incapsulate some reusable logic (like subscribtion to data changes)
  */
-export function useBrowserStorage<T>(key: string): ComputedRef<T | undefined> {
-  const state = inject<ComputedRef<{ [key: string]: T }>>(injectionKey)!
+export function useBrowserStorage<T>(key: string): WritableComputedRef<T | undefined> {
+  const state = inject<Ref<{ [key: string]: T }>>(injectionKey)!
 
   return computed({
     get: () => state?.value?.[key] as T | undefined,
