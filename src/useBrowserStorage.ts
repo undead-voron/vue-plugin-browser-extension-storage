@@ -9,14 +9,13 @@ import { injectionKey } from './constants'
  * Provides a reactive wrapper upon coupon engine properties and methods
  * Incapsulate some reusable logic (like subscribtion to data changes)
  */
-export function useBrowserStorage<T>(key: string): ComputedRef<T> {
-  const state = inject(injectionKey)!
+export function useBrowserStorage<T>(key: string): ComputedRef<T | undefined> {
+  const state = inject<ComputedRef<{ [key: string]: T }>>(injectionKey)!
 
   return computed({
-    // @ts-expect-error fix any typying
-    get: () => state.value[key as keyof typeof state] as T,
+    get: () => state?.value?.[key] as T | undefined,
     set: (newValue: T) => {
-      browser.storage.local.set({ key: newValue })
+      browser.storage.local.set({ [key]: newValue })
     },
   })
 }
