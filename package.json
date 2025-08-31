@@ -1,8 +1,9 @@
 {
   "name": "vue-plugin-browser-extension-storage",
-  "version": "0.0.13",
+  "version": "0.0.14",
+  "package-name": "vue-plugin-browser-extension-storage",
+  "types": "dist/index.d.ts",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "build": "vue-tsc --noEmit && vite build",
     "watch": "vite build --watch --mode development --minify false",
@@ -24,13 +25,6 @@
     ".": {
       "import": "./dist/index.mjs",
       "require": "./dist/index.umd.js"
-    }
-  },
-  "typesVersions": {
-    "*": {
-      "*": [
-        "dist/index.d.ts"
-      ]
     }
   },
   "files": [
